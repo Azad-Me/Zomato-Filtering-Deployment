@@ -2,9 +2,9 @@
 """
 Created on Sun May 28 23:05:23 2023
 
-@author: yogen
+@author: Azad
 """
-"Created by AZAD"
+
 
 import streamlit as st
 import pandas
