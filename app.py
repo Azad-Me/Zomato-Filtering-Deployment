@@ -4,13 +4,7 @@ Created on Sun May 28 23:05:23 2023
 
 @author: yogen
 """
-
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
+"Created by AZAD"
 
 import streamlit as st
 import pandas
