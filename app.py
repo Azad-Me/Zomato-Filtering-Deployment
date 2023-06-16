@@ -79,10 +79,32 @@ def natural_language_processing(text):
 
 
 def processed_text(text):
-   first = natural_language_processing(text)
-   vectors = tfidf.transform([first]).toarray()
-   result = model.predict(vectors)
-   if result[0] == 0:
+    #first = natural_language_processing(text)
+    #vectors = tfidf.transform([first]).toarray()
+    #result = model.predict(vectors)
+    
+    url = "https://openai80.p.rapidapi.com/completions"
+
+    payload = {
+        	"model": "text-davinci-003",
+        	"prompt": f"do sentiment analysis for the text{ text }",
+        	"max_tokens": 256,
+        	"temperature": 0.7,
+        	"top_p": 1,
+        	"n": 1,
+        	"stream": False,
+        	"logprobs": None,
+        	"stop": ""
+        }
+    headers = {
+        	"content-type": "application/json",
+        	"X-RapidAPI-Key": "8a00eb7337mshf8a2d52e86cf87cp12435fjsnc093d6aa0f8f",
+        	"X-RapidAPI-Host": "openai80.p.rapidapi.com"
+        }
+        
+        response = requests.post(url, json=payload, headers=headers)
+
+   if 'positive' in  response.json()['choices'][0]['text']:
       return ('The Review is Good, You can prefer this Hotel.')
    else:
       return ('The Review is Not so Good, there are plenty other options.')
@@ -129,6 +151,7 @@ with tab1:
             st.caption(l)
 
 with tab2:
+        
     st.title('Zomato Hotel Review Sentiment Analysis')
     txt = st.text_area(''' ''')
     if st.button('Should I, Go Here??'):
