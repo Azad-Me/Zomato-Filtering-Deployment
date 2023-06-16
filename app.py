@@ -102,7 +102,7 @@ def processed_text(text):
         	"X-RapidAPI-Host": "openai80.p.rapidapi.com"
         }
         
-        response = requests.post(url, json=payload, headers=headers)
+    response = requests.post(url, json=payload, headers=headers)
 
    if 'positive' in  response.json()['choices'][0]['text']:
       return ('The Review is Good, You can prefer this Hotel.')
