@@ -5,7 +5,7 @@ Created on Sun May 28 23:05:23 2023
 @author: Azad
 """
 
-
+import requests
 import streamlit as st
 import pandas
 
@@ -104,10 +104,10 @@ def processed_text(text):
         
     response = requests.post(url, json=payload, headers=headers)
 
-   if 'positive' in  response.json()['choices'][0]['text']:
-      return ('The Review is Good, You can prefer this Hotel.')
-   else:
-      return ('The Review is Not so Good, there are plenty other options.')
+    if 'positive' in  response.json()['choices'][0]['text']:
+       return ('The Review is Good, You can prefer this Hotel.')
+    else:
+       return ('The Review is Not so Good, there are plenty other options.')
 
 
 
