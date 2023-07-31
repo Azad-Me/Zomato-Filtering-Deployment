@@ -132,6 +132,26 @@ def hotel_recommendation(hotel_name):
   return (recommend_hotels,cuisines,review,rating)
 
 
+def set_bg_hack_url():
+    '''
+    A function to unpack an image from url and set as bg.
+    Returns
+    -------
+    The background.
+    '''
+        
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background: url("https://pixabay.com/get/g2a5149eaec687b8475e8035a2aad1341b687822dc1296691292ec5650c9563aebe2bda74803279a4919c2ccdcc321ac8d6d1e2739be4103cff156c328589b483_1920.jpg");
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+ def set_bg_hack_url()
 
 tab1, tab2= st.tabs(["Recommendation Engine", "Sentiment Analysis"])
 with tab1:
