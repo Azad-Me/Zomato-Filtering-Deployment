@@ -151,7 +151,7 @@ def set_bg_hack_url():
          """,
          unsafe_allow_html=True
      )
- def set_bg_hack_url()
+set_bg_hack_url()
 
 tab1, tab2= st.tabs(["Recommendation Engine", "Sentiment Analysis"])
 with tab1:
